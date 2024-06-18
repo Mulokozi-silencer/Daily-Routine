@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Routine Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Daily Routine Tracker</h1>
+  </header>
+  <main>
+    <section id="schedule">
+      <h2 align="center">Your Schedule</h2>
+      <ul id="activity-list"></ul>
+      <button id="add-activity-btn">Add Activity</button>
+      <button id="suggest-activity-btn">Suggest Activity Time</button>
+    </section>
+    <section id="add-activity" style="display:none;">
+      <h2 align="center">Add Activity</h2>
+      <form id="activity-form">
+        <input type="hidden" id="activity-id">
+        <label for="name">Activity Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" required>
+
+        <label for="start-time">Start Time:</label>
+        <input type="time" id="start-time" name="start-time" required>
+
+        <label for="end-time">End Time:</label>
+        <input type="time" id="end-time" name="end-time" required>
+
+        <label for="reminder-time">Reminder Time (minutes before):</label>
+        <input type="number" id="reminder-time" name="reminder-time" required>
+        
+        <label for="Music">Choose Music:</label>
+        <input type="file" id="audio-file-input" accept=".mp3,.wav,.ogg">
+    
+        <button type="submit">Save Activity</button>
+        <button type="button" id="cancel-edit">Cancel</button>
+      </form>
+    </section>
+    <section id="suggest-activity" style="display:none;">
+      <h2>Suggest Activity Time</h2>
+      <form id="suggest-form">
+        <label for="suggest-name">Activity Name:</label>
+        <input type="text" id="suggest-name" name="suggest-name" required>
+
+        <label for="suggest-category">Category:</label>
+        <input type="text" id="suggest-category" name="suggest-category" required>
+
+        <label for="suggest-duration">Duration (minutes):</label>
+        <input type="number" id="suggest-duration" name="suggest-duration" required>
+
+        <button type="submit">Suggest Time</button>
+      </form>
+      <div id="suggestion-result"></div>
+    </section>
+    <section id="statistics">
+      <h2>Statistics</h2>
+      <div id="stats-summary"></div>
+    </section>
+    <footer>
+      <p>Designed by MULOKOZI-silencer | Contact: mulokoziwillium@gmail.com</p>
+    </footer>    
+  </main>
+  <script src="app.js"></script>
+  <audio id="notification-sound" src="notification.mp3" preload="auto"></audio>
+</body>
+</html>
